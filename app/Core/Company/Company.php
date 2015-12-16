@@ -7,6 +7,6 @@ class Company extends Model
 {
     public function address()
     {
-        return $this->hasOne('App\Core\Address', 'id', 'address_id');
+        return $this->hasOne('App\Core\Common\Address', 'id', 'address_id');
     }
 }
