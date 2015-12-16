@@ -13,6 +13,7 @@
 
 use App\Core\Company\Company;
 use App\Core\Common\Address;
+use App\Core\Invoice\Invoice;
 
 Route::get('/', ['as' => 'home', function () {
     return view('app.layout');
@@ -44,4 +45,22 @@ Route::post('/company/save/{company?}', ['as' => 'company_save', function (Compa
     $c->fill(Input::all());
     $c->save();
     return Redirect::route('company_edit', [$c->id]);
+}]);
+
+Route::get('/invoice/list', ['as' => 'invoice_list', function () {
+    return view('app.invoice.list', ['invoices' => Invoice::all()]);
+}]);
+
+Route::get('/invoice/show/{invoice}', ['as' => 'invoice_show', function (Invoice $i) {
+    return view('app.invoice.show', ['invoice' => $i]);
+}]);
+
+Route::get('/invoice/edit/{invoice}', ['as' => 'invoice_edit', function (Invoice $i) {
+    return view('app.invoice.edit', ['invoice' => $i]);
+}]);
+
+Route::post('/invoice/save/{invoice?}', ['as' => 'invoice_save', function (Invoice $i = null) {
+    $i->fill(Input::all());
+    $i->save();
+    return Redirect::route('invoice_edit', [$i->id]);
 }]);

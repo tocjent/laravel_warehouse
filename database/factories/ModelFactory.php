@@ -35,3 +35,11 @@ $factory->define(App\Core\Company\Company::class, function(Faker\Generator $fake
         'address_id' => factory(App\Core\Common\Address::class)->create()->id
     ];
 });
+
+$factory->define(App\Core\Invoice\Invoice::class, function(Faker\Generator $faker) {
+    return [
+        'number' => strtoupper($faker->bothify('???/2015/###')),
+        'sellerName' => $faker->company,
+        'sellerNIP' => $faker->numerify('#########'),
+    ];
+});

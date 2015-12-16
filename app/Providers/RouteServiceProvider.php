@@ -27,6 +27,7 @@ class RouteServiceProvider extends ServiceProvider
         parent::boot($router);
 
         $router->model('company', 'App\Core\Company\Company');
+        $router->model('invoice', 'App\Core\Invoice\Invoice');
     }
 
     /**

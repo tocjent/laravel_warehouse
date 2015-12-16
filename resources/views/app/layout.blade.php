@@ -17,6 +17,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('company_list')}}">Companies</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('invoice_list')}}">Invoices</a>
+                </li>
             </ul>
         </nav>
         <div class="container p-a-2">

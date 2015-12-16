@@ -13,9 +13,11 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         Model::unguard();
-        
+
         $this->call(CompanyTableSeeder::class);
         $this->command->info('Company table seeded!');
+        $this->call(InvoiceTableSeeder::class);
+        $this->command->info('Invoice table seeded!');
 
         Model::reguard();
     }

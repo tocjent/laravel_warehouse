@@ -13,6 +13,7 @@
         </div>
         <div class="card-block m-x-1">
             {!! Form::model($company, ['route' => ['company_save', $company->id]]) !!}
+            <div class="row m-a-1">
                 <div class="form-group row">
                     <div class="col-xs-6">
                         {!! Form::label('name', 'Name') !!}
@@ -42,6 +43,7 @@
                         Save
                     </button>
                 </div>
+            </div>
             {!! Form::close() !!}
         </div>
     </div>
