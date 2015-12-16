@@ -12,5 +12,20 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('app.layout');
+});
+
+Route::get('/company/list', function () {
+
+    return view('app.company.list', [
+        'companies' => App\Core\Company\Company::all()
+    ]);
+});
+
+Route::get('/company/create', function () {
+    return view('company_create');
+});
+
+Route::get('/company/edit', function () {
+    return view('company_edit');
 });

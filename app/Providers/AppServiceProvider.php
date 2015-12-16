@@ -13,7 +13,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->publishes([
+            __DIR__.'/../../vendor/twbs/bootstrap' => public_path('vendor/bootstrap')
+        ], 'public');
     }
 
     /**
