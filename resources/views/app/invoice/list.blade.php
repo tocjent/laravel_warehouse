@@ -3,15 +3,15 @@
 @section('content')
     <div class="card">
         <div class="card-block row">
-            <div class="col-sm-12 col-md-6">
+            <div class="col-xs-12 col-sm-6">
                 <h4>Invoices list</h4>
             </div>
-            <div class="col-sm-12 col-md-6">
+            <div class="col-xs-12 col-sm-6">
                 <div class="btn-group pull-right">
-                    {{-- <a href="{{route('invoice_create')}}" class="btn btn-success">
+                    <a href="{{route('invoice_create')}}" class="btn btn-success">
                         <i class="fa fa-plus"></i>
                         Create
-                    </a> --}}
+                    </a>
                 </div>
             </div>
         </div>
@@ -42,5 +42,8 @@
                 @endforeach
             </tbody>
         </table>
+        <div class="card-block">
+            @include('app.pagination', ['paginator' => $invoices])
+        </div>
     </div>
 @endsection

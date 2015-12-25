@@ -14,13 +14,8 @@
             });
         </script>
         <nav class="navbar navbar-static-top navbar-dark bg-inverse">
-            <a class="navbar-brand" href="#">Project name</a>
+            <a class="navbar-brand" href="{{route('home')}}">Project name</a>
             <ul class="nav navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('home')}}">Home
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('company_list')}}">Companies</a>
                 </li>

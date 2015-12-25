@@ -49,11 +49,15 @@ Route::post('/company/save/{company?}', ['as' => 'company_save', function (Compa
 }]);
 
 Route::get('/invoice/list', ['as' => 'invoice_list', function () {
-    return view('app.invoice.list', ['invoices' => Invoice::all()]);
+    return view('app.invoice.list', ['invoices' => Invoice::paginate(20)]);
 }]);
 
 Route::get('/invoice/show/{invoice}', ['as' => 'invoice_show', function (Invoice $i) {
     return view('app.invoice.show', ['invoice' => $i]);
+}]);
+
+Route::get('/invoice/create', ['as' => 'invoice_create', function () {
+    return view('app.invoice.edit', ['invoice' => new Invoice()]);
 }]);
 
 Route::get('/invoice/edit/{invoice}', ['as' => 'invoice_edit', function (Invoice $i) {
