@@ -6,6 +6,13 @@
         <link charset="utf-8" href="{{asset('vendor/font-awesome/css/font-awesome.min.css')}}" media="screen" rel="stylesheet" title="no title">
     </head>
     <body>
+        <script src="{{asset('vendor/jquery/jquery.min.js')}}" type="text/javascript"/>
+        <script src="{{asset('vendor/bootstrap/js/bootstrap.min.js')}}" type="text/javascript"/>
+        <script type="text/javascript">
+            $(function() {
+                $('[data-toggle="tooltip"]').tooltip();
+            });
+        </script>
         <nav class="navbar navbar-static-top navbar-dark bg-inverse">
             <a class="navbar-brand" href="#">Project name</a>
             <ul class="nav navbar-nav">
@@ -28,11 +35,4 @@
             </div>
         </div>
     </body>
-    <script src="{{asset('vendor/jquery/jquery.min.js')}}" type="text/javascript"/>
-    <script src="{{asset('vendor/bootstrap/js/bootstrap.min.js')}}" type="text/javascript"/>
-    <script type="text/javascript">
-        $(function() {
-            $('[data-toggle="tooltip"]').tooltip();
-        });
-    </script>
 </html>

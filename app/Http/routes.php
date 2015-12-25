@@ -14,6 +14,7 @@
 use App\Core\Company\Company;
 use App\Core\Common\Address;
 use App\Core\Invoice\Invoice;
+use App\Core\Invoice\InvoiceItem;
 
 Route::get('/', ['as' => 'home', function () {
     return view('app.layout');
@@ -60,7 +61,15 @@ Route::get('/invoice/edit/{invoice}', ['as' => 'invoice_edit', function (Invoice
 }]);
 
 Route::post('/invoice/save/{invoice?}', ['as' => 'invoice_save', function (Invoice $i = null) {
-    $i->fill(Input::all());
+    $i->fill(Input::only('sellerName', 'sellerNIP'));
     $i->save();
+    foreach(Input::get('items') as $inputItem) {
+        $item = InvoiceItem::firstOrNew([
+            'id' => $inputItem['id']
+        ]);
+        $item->fill($inputItem);
+        $item->invoice_id = $i->id;
+        $item->save();
+    }
     return Redirect::route('invoice_edit', [$i->id]);
 }]);
