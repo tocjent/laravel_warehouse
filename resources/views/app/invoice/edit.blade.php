@@ -21,7 +21,7 @@
                         </div>
                     </div>
                     <div class="form-group row col-sm-12 col-md-6">
-                        <div class="col-xs-12">
+                        <div class="col-xs-12">	
                             {!! Form::label('sellerName', 'Seller name') !!}
                             {!! Form::text('sellerName', null, ['class' => 'form-control']) !!}
                         </div>
@@ -29,6 +29,9 @@
                             {!! Form::label('sellerNIP', 'Seller NIP') !!}
                             {!! Form::text('sellerNIP', null, ['class' => 'form-control']) !!}
                         </div>
+                    </div>
+                    <div class="form-group col-xs-12">
+                        asdasdasd
                     </div>
                     <div class="form-group row m-b-1 col-xs-12">
                         <button type="submit" class="btn btn-primary btn-block">

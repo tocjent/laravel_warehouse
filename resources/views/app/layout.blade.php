@@ -22,7 +22,7 @@
                 </li>
             </ul>
         </nav>
-        <div class="container p-a-2">
+        <div class="container-fluid p-a-2">
             <div class="content">
                 @yield('content')
             </div>

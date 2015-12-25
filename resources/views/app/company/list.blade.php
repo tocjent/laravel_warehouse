@@ -2,19 +2,23 @@
 
 @section('content')
     <div class="card">
-        <div class="card-block">
-            <div class="btn-group">
-                <a href="{{route('company_create')}}" class="btn btn-success">
-                    <i class="fa fa-plus"></i>
-                    Create
-                </a>
+        <div class="card-block row">
+            <div class="col-sm-12 col-md-6">
+                <h4>Company list</h4>
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <div class="btn-group pull-right">
+                    <a href="{{route('company_create')}}" class="btn btn-success">
+                        <i class="fa fa-plus"></i>
+                        Create
+                    </a>
+                </div>
             </div>
         </div>
         <table class="card-block table table-hover">
             <thead>
                 <tr>
                     <th>Actions</th>
-                    <th>ID</th>
                     <th>Name</th>
                     <th>NIP</th>
                     <th>Address</th>
@@ -33,7 +37,6 @@
                             </a>
                         </div>
                     </td>
-                    <td>{{ $company->id }}</td>
                     <td>{{ $company->name }}</td>
                     <td>{{ $company->NIP }}</td>
                     <td>

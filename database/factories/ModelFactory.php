@@ -43,3 +43,12 @@ $factory->define(App\Core\Invoice\Invoice::class, function(Faker\Generator $fake
         'sellerNIP' => $faker->numerify('#########'),
     ];
 });
+
+$factory->define(App\Core\Invoice\InvoiceItem::class, function(Faker\Generator $faker) {
+    return [
+        'price' => $faker->randomFloat(10, 2, 1000),
+        'quantity' => $faker->numberBetween(1, 10),
+        'productName' => $faker->word,
+        'productCode' => $faker->numerify('########')
+    ];
+});

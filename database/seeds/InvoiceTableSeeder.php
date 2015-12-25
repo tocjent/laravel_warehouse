@@ -11,6 +11,14 @@ class InvoiceTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Core\Invoice\Invoice::class, 5)->create();
+        $invoices = factory(App\Core\Invoice\Invoice::class, 5)->create();
+        foreach ($invoices as $invoice) {
+            $items = factory(App\Core\Invoice\InvoiceItem::class, 5)->make();
+            foreach($items as $item) {
+                $item->invoice_id = $invoice->id;
+                $item->save();
+            }
+            $invoice->save();
+        }
     }
 }
